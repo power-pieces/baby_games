@@ -41,3 +41,4 @@ var skins;
         ShowcaseSkin.prototype.__class__ = "skins.scene.ShowcaseSkin";
     })(scene = skins.scene || (skins.scene = {}));
 })(skins || (skins = {}));
+//# sourceMappingURL=ShowcaseSkin.js.map
