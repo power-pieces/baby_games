@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin width="480" height="800" xmlns:e="http://ns.egret-labs.org/egret" xmlns:w="http://ns.egret-labs.org/wing" xmlns:ns1="*">
+	<e:states>
+		<e:State name="win"/>
+		<e:State name="fail"/>
+	</e:states>
+	<w:HostComponent name="egret.gui.SkinnableComponent"/>
+	<w:Declarations/>
+	<e:UIAsset source="bgImage" x="0" y="0"/>
+	<ns1:Top x="0" y="0" skinName="skins.component.TopSkin"/>
+	<e:Label text="积分：1000" id="txtScore" x="47" y="120"/>
+	<e:Button label="排行榜" id="btnRank" x="312" y="109"/>
+	<e:UIAsset id="imgFace" source="box_jpg" x="191" y="213"/>
+	<e:Label id="txtTime" text="时间：1111秒" y="439" horizontalCenter="0"/>
+	<e:Button id="btnMenu" label="返回起点" x="9" y="569.5"/>
+	<e:Button id="btnReplay" label="重新探索" x="172" y="569.5"/>
+	<e:Button id="btnNext" label="新的知识" x="335" y="569.5"/>
+	<e:Label id="txtGetScore" text="积分：10" includeIn="fail" y="349" horizontalCenter="0"/>
+	<e:UIAsset id="imgStar0" source="rank_1_png" includeIn="win" x="117" y="344"/>
+	<e:UIAsset id="imgStar1" source="rank_1_png" includeIn="win" x="213" y="344"/>
+	<e:UIAsset id="imgStar2" source="rank_1_png" includeIn="win" x="309" y="344"/>
+</e:Skin>

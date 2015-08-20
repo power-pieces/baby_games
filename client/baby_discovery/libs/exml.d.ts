@@ -1,5 +1,37 @@
+declare module skins.component{
+	class LevelMapSkin extends egret.gui.Skin{
+	}
+}
+declare module skins.component{
+	class LevelSkin extends egret.gui.Skin{
+	}
+}
+declare module skins.component{
+	class RankItemSkin extends egret.gui.Skin{
+	}
+}
+declare module skins.component{
+	class TopSkin extends egret.gui.Skin{
+	}
+}
 declare module skins.scene{
-	class ShowcaseSkin extends egret.gui.Skin{
+	class GameSkin extends egret.gui.Skin{
+	}
+}
+declare module skins.scene{
+	class IndexSkin extends egret.gui.Skin{
+	}
+}
+declare module skins.scene{
+	class MenuSkin extends egret.gui.Skin{
+	}
+}
+declare module skins.scene{
+	class RankSkin extends egret.gui.Skin{
+	}
+}
+declare module skins.scene{
+	class ResultSkin extends egret.gui.Skin{
 	}
 }
 declare module skins.simple{
@@ -136,5 +168,9 @@ declare module skins.simple{
 }
 declare module skins.simple{
 	class VSliderThumbSkin extends egret.gui.Skin{
+	}
+}
+declare module skins.window{
+	class PauseMenuSkin extends egret.gui.Skin{
 	}
 }

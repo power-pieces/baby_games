@@ -439,6 +439,16 @@
     <Content Include="resource\assets\simple\VSlider\VSlider_fill.png" />
     <Content Include="resource\assets\simple\VSlider\VSlider_thumb.png" />
     <Content Include="resource\assets\simple\VSlider\VSlider_track.png" />
+    <Content Include="src\jing\net\NetProxy.js" />
+    <Content Include="src\jing\notice\Notice.js" />
+    <Content Include="src\jing\notice\NoticeManager.js" />
+    <Content Include="src\jing\utils\AudioDevice.js" />
+    <Content Include="src\jing\utils\Extend.js" />
+    <Content Include="src\jing\utils\HGroup.js" />
+    <Content Include="src\jing\utils\StringUtil.js" />
+    <Content Include="src\jing\utils\Texture.js" />
+    <Content Include="src\jing\view\GUIManager.js" />
+    <Content Include="src\jing\view\Strip.js" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -454,7 +464,6 @@
     <Content Include="resource\resource.json" />
     <Content Include="resource\theme.thm" />
     <Content Include="run.bat" />
-    <Content Include="src\skins\scene\ShowcaseSkin.exml" />
     <Content Include="src\skins\simple\AlertSkin.exml" />
     <Content Include="src\skins\simple\ButtonSkin.exml" />
     <Content Include="src\skins\simple\CheckBoxSkin.exml" />
@@ -491,6 +500,11 @@
     <Content Include="src\skins\simple\VSliderThumbSkin.exml" />
     <Content Include="build_engine.bat" />
     <Content Include="egretProperties.json" />
+    <Content Include="src\skins\component\TopSkin.exml" />
+    <Content Include="src\skins\scene\IndexSkin.exml" />
+    <Content Include="src\skins\component\LevelMapSkin.exml" />
+    <Content Include="src\skins\component\LevelSkin.exml" />
+    <Content Include="src\skins\scene\MenuSkin.exml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -508,9 +522,24 @@
     <TypeScriptCompile Include="libs\exml.d.ts" />
     <TypeScriptCompile Include="libs\_references.ts" />
     <TypeScriptCompile Include="src\AssetAdapter.ts" />
+    <TypeScriptCompile Include="src\jing\core\AudioDevice.ts" />
+    <TypeScriptCompile Include="src\jing\net\NetProxy.ts" />
+    <TypeScriptCompile Include="src\jing\notice\Notice.ts" />
+    <TypeScriptCompile Include="src\jing\notice\NoticeManager.ts" />
+    <TypeScriptCompile Include="src\jing\utils\ExtendUtil.ts" />
+    <TypeScriptCompile Include="src\jing\utils\ResUtil.ts" />
+    <TypeScriptCompile Include="src\jing\utils\StringUtil.ts" />
+    <TypeScriptCompile Include="src\jing\view\gui\ASkinCom.ts" />
+    <TypeScriptCompile Include="src\jing\view\gui\GUIManager.ts" />
+    <TypeScriptCompile Include="src\jing\view\HGroup.ts" />
+    <TypeScriptCompile Include="src\jing\view\Strip.ts" />
     <TypeScriptCompile Include="src\LoadingUI.ts" />
     <TypeScriptCompile Include="src\Main.ts" />
-    <TypeScriptCompile Include="src\scene\Showcase.ts" />
+    <TypeScriptCompile Include="src\view\component\Level.ts" />
+    <TypeScriptCompile Include="src\view\component\LevelMap.ts" />
+    <TypeScriptCompile Include="src\view\component\Top.ts" />
+    <TypeScriptCompile Include="src\view\scene\Index.ts" />
+    <TypeScriptCompile Include="src\view\scene\Menu.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>

@@ -311,6 +311,16 @@
 				"isFolder":false,
 				"key":"vscrolltrack_png",
 				"name":"vscrolltrack_png"
+			},
+			{
+				"isFolder":false,
+				"key":"box_jpg",
+				"name":"box_jpg"
+			},
+			{
+				"isFolder":false,
+				"key":"rank_1_png",
+				"name":"rank_1_png"
 			}]
 		}
 	},

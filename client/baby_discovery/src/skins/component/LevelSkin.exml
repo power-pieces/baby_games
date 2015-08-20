@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin width="200" height="160" xmlns:e="http://ns.egret-labs.org/egret" xmlns:w="http://ns.egret-labs.org/wing">
+	<w:HostComponent name="egret.gui.SkinnableComponent"/>
+	<w:Declarations/>
+	<e:states>
+		<e:State name="normal"/>
+		<e:State name="disabled"/>
+	</e:states>
+	<e:UIAsset id="imgLevel" source="box_jpg" x="50" y="0"/>
+	<e:UIAsset id="imgStar0" source="rank_1_png" x="2" y="103.5"/>
+	<e:UIAsset id="imgStar1" source="rank_1_png" x="70" y="103.5"/>
+	<e:UIAsset id="imgStar2" source="rank_1_png" x="137" y="103.5"/>
+</e:Skin>
