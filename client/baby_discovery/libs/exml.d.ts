@@ -171,6 +171,10 @@ declare module skins.simple{
 	}
 }
 declare module skins.window{
+	class LockWindowSkin extends egret.gui.Skin{
+	}
+}
+declare module skins.window{
 	class PauseMenuSkin extends egret.gui.Skin{
 	}
 }
