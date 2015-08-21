@@ -7,7 +7,7 @@
 	<w:HostComponent name="egret.gui.SkinnableComponent"/>
 	<w:Declarations/>
 	<e:UIAsset source="bgImage" x="0" y="0"/>
-	<ns1:Top x="0" y="0" skinName="skins.component.TopSkin"/>
+	<ns1:Top id="topBanner" x="0" y="0" skinName="skins.component.TopSkin"/>
 	<e:Label text="积分：1000" id="txtScore" x="47" y="120"/>
 	<e:Button label="排行榜" id="btnRank" x="312" y="109"/>
 	<e:UIAsset id="imgFace" source="box_jpg" x="191" y="213"/>

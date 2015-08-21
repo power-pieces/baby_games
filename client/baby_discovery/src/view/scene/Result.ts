@@ -25,6 +25,6 @@ class Result extends ASkinCom
 
     public constructor() 
     {
-        super(skins.scene.MenuSkin);
+        super(skins.scene.ResultSkin);
     }
 }

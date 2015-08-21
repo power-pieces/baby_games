@@ -1,4 +1,4 @@
-/**
+﻿/**
  *
  * @author 
  *
@@ -15,6 +15,11 @@ class LevelMap extends ASkinCom
     public init()
     {
         
+    }
+
+    public update():void
+    {
+
     }
 
     public partAdded(partName: string, instance: any): void

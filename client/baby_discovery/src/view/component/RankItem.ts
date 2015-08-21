@@ -1,4 +1,4 @@
-/**
+﻿/**
  *
  * @author 
  *
@@ -13,5 +13,9 @@ class RankItem extends ASkinCom
     public constructor() 
     {
         super(skins.component.RankItemSkin);
-	}
+    }
+
+    public setInfo(rank:number, pic:string, name:string, score:number): void
+    {
+    }
 }
