@@ -9,11 +9,11 @@ var __extends = this.__extends || function (d, b) {
  * @author
  *
  */
-var Menu = (function (_super) {
-    __extends(Menu, _super);
-    function Menu() {
+var Result = (function (_super) {
+    __extends(Result, _super);
+    function Result() {
         _super.call(this, skins.scene.MenuSkin);
     }
-    return Menu;
+    return Result;
 })(ASkinCom);
-//# sourceMappingURL=Menu.js.map
+//# sourceMappingURL=Result.js.map
