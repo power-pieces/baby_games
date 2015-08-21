@@ -12,7 +12,7 @@ var __extends = this.__extends || function (d, b) {
 var Result = (function (_super) {
     __extends(Result, _super);
     function Result() {
-        _super.call(this, skins.scene.MenuSkin);
+        _super.call(this, skins.scene.ResultSkin);
     }
     return Result;
 })(ASkinCom);

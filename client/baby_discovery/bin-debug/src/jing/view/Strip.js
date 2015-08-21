@@ -4,15 +4,26 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
+/**
+* 轻量级的序列图工具
+*/
 var Strip = (function (_super) {
     __extends(Strip, _super);
+    /**
+    *
+    */
     function Strip(textures, fps, loop) {
         if (loop === void 0) { loop = false; }
         _super.call(this);
+        //纹理集合
         this._textures = null;
+        //纹理间隔
         this._interval = 0;
+        //下次切换纹理的时间
         this._changeTime = 0;
+        //当前纹理索引
         this._tIndex = 0;
+        //是否循环播放
         this._loop = false;
         this._textures = textures;
         this._interval = (1000 / fps) >> 0;
@@ -39,6 +50,7 @@ var Strip = (function (_super) {
             this._changeTime = now + this._interval;
         }
     };
+    //切换到下一帧
     Strip.prototype.next = function () {
         this._tIndex++;
         if (this._tIndex >= this._textures.length) {
@@ -61,3 +73,4 @@ var Strip = (function (_super) {
     };
     return Strip;
 })(egret.Bitmap);
+//# sourceMappingURL=Strip.js.map

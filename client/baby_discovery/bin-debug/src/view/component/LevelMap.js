@@ -12,6 +12,8 @@ var LevelMap = (function (_super) {
     var __egretProto__ = LevelMap.prototype;
     __egretProto__.init = function () {
     };
+    __egretProto__.update = function () {
+    };
     __egretProto__.partAdded = function (partName, instance) {
         this.levels[partName] = instance;
     };

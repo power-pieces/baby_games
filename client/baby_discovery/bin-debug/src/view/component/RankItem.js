@@ -14,6 +14,8 @@ var RankItem = (function (_super) {
     function RankItem() {
         _super.call(this, skins.component.RankItemSkin);
     }
+    RankItem.prototype.setInfo = function (rank, pic, name, score) {
+    };
     return RankItem;
 })(ASkinCom);
 //# sourceMappingURL=RankItem.js.map

@@ -1,3 +1,6 @@
+/*
+* 网络通信代理
+*/
 var NetProxy = (function () {
     function NetProxy() {
         this._loader = null;
@@ -33,3 +36,4 @@ var NetProxy = (function () {
     };
     return NetProxy;
 })();
+//# sourceMappingURL=NetProxy.js.map

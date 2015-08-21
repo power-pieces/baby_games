@@ -441,7 +441,6 @@
     <Content Include="resource\assets\simple\VSlider\VSlider_fill.png" />
     <Content Include="resource\assets\simple\VSlider\VSlider_thumb.png" />
     <Content Include="resource\assets\simple\VSlider\VSlider_track.png" />
-    <Content Include="src\jing\net\NetProxy.js" />
     <Content Include="src\jing\notice\Notice.js" />
     <Content Include="src\jing\notice\NoticeManager.js" />
     <Content Include="src\jing\utils\AudioDevice.js" />
@@ -449,8 +448,6 @@
     <Content Include="src\jing\utils\HGroup.js" />
     <Content Include="src\jing\utils\StringUtil.js" />
     <Content Include="src\jing\utils\Texture.js" />
-    <Content Include="src\jing\view\GUIManager.js" />
-    <Content Include="src\jing\view\Strip.js" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -546,8 +543,12 @@
     <TypeScriptCompile Include="src\view\component\LevelMap.ts" />
     <TypeScriptCompile Include="src\view\component\RankItem.ts" />
     <TypeScriptCompile Include="src\view\component\Top.ts" />
+    <TypeScriptCompile Include="src\view\scene\Game.ts" />
     <TypeScriptCompile Include="src\view\scene\Index.ts" />
     <TypeScriptCompile Include="src\view\scene\Menu.ts" />
+    <TypeScriptCompile Include="src\view\scene\Rank.ts" />
+    <TypeScriptCompile Include="src\view\scene\Result.ts" />
+    <TypeScriptCompile Include="src\view\window\PauseWindow.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
