@@ -41,3 +41,4 @@ var skins;
         TopSkin.prototype.__class__ = "skins.component.TopSkin";
     })(component = skins.component || (skins.component = {}));
 })(skins || (skins = {}));
+//# sourceMappingURL=TopSkin.js.map

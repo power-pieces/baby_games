@@ -53,3 +53,4 @@ var skins;
         LevelSkin.prototype.__class__ = "skins.component.LevelSkin";
     })(component = skins.component || (skins.component = {}));
 })(skins || (skins = {}));
+//# sourceMappingURL=LevelSkin.js.map

@@ -12,3 +12,4 @@ var Menu = (function (_super) {
     return Menu;
 })(ASkinCom);
 Menu.prototype.__class__ = "Menu";
+//# sourceMappingURL=Menu.js.map

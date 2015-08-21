@@ -31,3 +31,4 @@ var Top = (function (_super) {
     return Top;
 })(ASkinCom);
 Top.prototype.__class__ = "Top";
+//# sourceMappingURL=Top.js.map

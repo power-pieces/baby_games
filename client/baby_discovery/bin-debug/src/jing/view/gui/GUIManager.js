@@ -94,3 +94,4 @@ var GUIManager = (function () {
     return GUIManager;
 })();
 GUIManager.prototype.__class__ = "GUIManager";
+//# sourceMappingURL=GUIManager.js.map

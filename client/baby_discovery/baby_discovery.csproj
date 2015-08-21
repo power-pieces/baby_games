@@ -379,6 +379,8 @@
     <Content Include="libs\core\extension\resource\Resource.js" />
     <Content Include="libs\core\jslib\NumberUtils.js" />
     <Content Include="resource\assets\bg.jpg" />
+    <Content Include="resource\assets\box.jpg" />
+    <Content Include="resource\assets\rank_1.png" />
     <Content Include="resource\assets\simple\CheckBox\checkbox-select_disabled.png" />
     <Content Include="resource\assets\simple\CheckBox\checkbox-select_normal.png" />
     <Content Include="resource\assets\simple\CheckBox\checkbox-select_over.png" />
@@ -505,6 +507,11 @@
     <Content Include="src\skins\component\LevelMapSkin.exml" />
     <Content Include="src\skins\component\LevelSkin.exml" />
     <Content Include="src\skins\scene\MenuSkin.exml" />
+    <Content Include="src\skins\window\PauseMenuSkin.exml" />
+    <Content Include="src\skins\scene\GameSkin.exml" />
+    <Content Include="src\skins\scene\RankSkin.exml" />
+    <Content Include="src\skins\scene\ResultSkin.exml" />
+    <Content Include="src\skins\component\RankItemSkin.exml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -537,6 +544,7 @@
     <TypeScriptCompile Include="src\Main.ts" />
     <TypeScriptCompile Include="src\view\component\Level.ts" />
     <TypeScriptCompile Include="src\view\component\LevelMap.ts" />
+    <TypeScriptCompile Include="src\view\component\RankItem.ts" />
     <TypeScriptCompile Include="src\view\component\Top.ts" />
     <TypeScriptCompile Include="src\view\scene\Index.ts" />
     <TypeScriptCompile Include="src\view\scene\Menu.ts" />
