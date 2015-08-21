@@ -113,13 +113,12 @@ class Main extends egret.DisplayObjectContainer {
      * 创建场景界面
      * Create scene interface
      */
-    private createScene():void {
-
-        //游戏场景层，游戏场景相关内容可以放在这里面。
-        //Game scene layer, the game content related to the scene can be placed inside this layer.
-
+    private createScene(): void 
+    {        
+        DC.cfg = RES.getRes("config_json");
         GUIManager.init(this.stage);
         GUIManager.showScene(new Index());
+        new LoginCmd().run(DC.id, DC.name, DC.pic);
     }
 
 

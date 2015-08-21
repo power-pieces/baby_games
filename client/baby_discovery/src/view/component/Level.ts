@@ -10,7 +10,7 @@ class Level extends ASkinCom
     public imgStar1: egret.gui.UIAsset;
     public imgStar2: egret.gui.UIAsset;
 
-    private _level: number = -1;
+    private _vo: any = null;
 
     public constructor() 
     {
@@ -18,13 +18,24 @@ class Level extends ASkinCom
     }
 
     //设置关卡信息
-    public setLevel(level:number):void
+    public setLevel(vo:any):void
     {
-
+        this._vo = vo;
+        this.update();
     }
 
     public update():void
     {
+        if (null == this._vo)
+        {
+            //没玩的关卡
+            this.visible = false;
+        }
+        else
+        {
+            //可玩的关卡
+            this.visible = true;
+        }
     }
 
     public addListeners(): void
@@ -39,6 +50,6 @@ class Level extends ASkinCom
 
     private touchTapHandler(e: egret.TouchEvent): void
     {
-        GUIManager.showScene(new Game(this._level));        
+        GUIManager.showScene(new Game(this._vo.level));        
     }
 }

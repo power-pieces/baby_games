@@ -22,7 +22,7 @@ class Menu extends ASkinCom
             GUIManager.showScene(new Index());
         }, this);
 
-        this.txtScore.text = "积分：0";
+        this.txtScore.text = "积分：" + DC.getTotalScore();
         this.levelMap.update();
     }
 

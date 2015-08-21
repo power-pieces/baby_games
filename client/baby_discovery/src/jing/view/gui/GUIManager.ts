@@ -24,7 +24,7 @@
     /**
     * 显示场景(场景是唯一的，不能在舞台上叠加，新的场景会移除旧的场景
     */
-    public static showScene(scene: ASkinCom)
+    public static showScene(scene: ASkinCom, data:any = null)
     {       
         if (GUIManager._scene != null)
         {            
@@ -47,12 +47,13 @@
 
         GUIManager.uiStage.addElement(scene);
         GUIManager._scene = scene;
+        scene.setData(data);
     }
 
     /**
     * 显示窗口（窗口会移除叠加在舞台上）
     */ 
-    public static showWindow(window: ASkinCom, modal:boolean = true, center:boolean = true):void
+    public static showWindow(window: ASkinCom, data:any = null, modal:boolean = true, center:boolean = true):void
     {
         var windows: egret.gui.UIComponent[] = GUIManager._windows;
         var index: number = windows.indexOf(window);
@@ -62,7 +63,7 @@
         }
         egret.gui.PopUpManager.addPopUp(window, modal, center);
         GUIManager._windows.push(window);
-
+        window.setData(data);
         if (window.initialized == false && GUIManager._windowLoading != null)
         {
             egret.gui.PopUpManager.addPopUp(GUIManager._windowLoading, true, true);
