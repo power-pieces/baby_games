@@ -23,6 +23,13 @@
     <Content Include="bin-debug\lib\egret_file_list_native.js" />
     <Content Include="bin-debug\src\AssetAdapter.js" />
     <Content Include="bin-debug\src\game_file_list.js" />
+    <Content Include="bin-debug\src\jing\net\NetProxy.js" />
+    <Content Include="bin-debug\src\jing\notice\Notice.js" />
+    <Content Include="bin-debug\src\jing\notice\NoticeManager.js" />
+    <Content Include="bin-debug\src\jing\utils\StringUtil.js" />
+    <Content Include="bin-debug\src\jing\view\gui\ASkinCom.js" />
+    <Content Include="bin-debug\src\jing\view\gui\GUIManager.js" />
+    <Content Include="bin-debug\src\jing\view\Strip.js" />
     <Content Include="bin-debug\src\LoadingUI.js" />
     <Content Include="bin-debug\src\Main.js" />
     <Content Include="bin-debug\src\scene\Showcase.js" />
@@ -59,6 +66,15 @@
     <Content Include="bin-debug\src\skins\simple\VScrollBarThumbSkin.js" />
     <Content Include="bin-debug\src\skins\simple\VSliderSkin.js" />
     <Content Include="bin-debug\src\skins\simple\VSliderThumbSkin.js" />
+    <Content Include="bin-debug\src\view\component\Level.js" />
+    <Content Include="bin-debug\src\view\component\LevelMap.js" />
+    <Content Include="bin-debug\src\view\component\RankItem.js" />
+    <Content Include="bin-debug\src\view\component\Top.js" />
+    <Content Include="bin-debug\src\view\scene\Game.js" />
+    <Content Include="bin-debug\src\view\scene\Index.js" />
+    <Content Include="bin-debug\src\view\scene\Menu.js" />
+    <Content Include="bin-debug\src\view\scene\Rank.js" />
+    <Content Include="bin-debug\src\view\window\PauseWindow.js" />
     <Content Include="launcher\egret_loader.js" />
     <Content Include="launcher\egret_require.js" />
     <Content Include="launcher\index.html" />
@@ -441,8 +457,6 @@
     <Content Include="resource\assets\simple\VSlider\VSlider_fill.png" />
     <Content Include="resource\assets\simple\VSlider\VSlider_thumb.png" />
     <Content Include="resource\assets\simple\VSlider\VSlider_track.png" />
-    <Content Include="src\jing\notice\Notice.js" />
-    <Content Include="src\jing\notice\NoticeManager.js" />
     <Content Include="src\jing\utils\AudioDevice.js" />
     <Content Include="src\jing\utils\Extend.js" />
     <Content Include="src\jing\utils\HGroup.js" />
@@ -509,6 +523,8 @@
     <Content Include="src\skins\scene\RankSkin.exml" />
     <Content Include="src\skins\scene\ResultSkin.exml" />
     <Content Include="src\skins\component\RankItemSkin.exml" />
+    <Content Include="resource\config\config.json" />
+    <Content Include="resource\config\level.json" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -526,6 +542,8 @@
     <TypeScriptCompile Include="libs\exml.d.ts" />
     <TypeScriptCompile Include="libs\_references.ts" />
     <TypeScriptCompile Include="src\AssetAdapter.ts" />
+    <TypeScriptCompile Include="src\control\ACmd.ts" />
+    <TypeScriptCompile Include="src\control\LoginCmd.ts" />
     <TypeScriptCompile Include="src\jing\core\AudioDevice.ts" />
     <TypeScriptCompile Include="src\jing\net\NetProxy.ts" />
     <TypeScriptCompile Include="src\jing\notice\Notice.ts" />
@@ -539,6 +557,11 @@
     <TypeScriptCompile Include="src\jing\view\Strip.ts" />
     <TypeScriptCompile Include="src\LoadingUI.ts" />
     <TypeScriptCompile Include="src\Main.ts" />
+    <TypeScriptCompile Include="src\model\DC.ts" />
+    <TypeScriptCompile Include="src\util\Effect.ts" />
+    <TypeScriptCompile Include="src\util\GameNotice.ts" />
+    <TypeScriptCompile Include="src\util\NetManager.ts" />
+    <TypeScriptCompile Include="src\view\component\GameBoard.ts" />
     <TypeScriptCompile Include="src\view\component\Level.ts" />
     <TypeScriptCompile Include="src\view\component\LevelMap.ts" />
     <TypeScriptCompile Include="src\view\component\RankItem.ts" />
@@ -548,6 +571,7 @@
     <TypeScriptCompile Include="src\view\scene\Menu.ts" />
     <TypeScriptCompile Include="src\view\scene\Rank.ts" />
     <TypeScriptCompile Include="src\view\scene\Result.ts" />
+    <TypeScriptCompile Include="src\view\window\LockWindow.ts" />
     <TypeScriptCompile Include="src\view\window\PauseWindow.ts" />
   </ItemGroup>
   <PropertyGroup>

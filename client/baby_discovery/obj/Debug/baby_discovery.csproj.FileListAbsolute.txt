@@ -4,3 +4,9 @@ F:\code\baby_games\trunk\client\baby_discovery\bin\baby_discovery.pdb
 F:\code\baby_games\trunk\client\baby_discovery\obj\Debug\baby_discovery.csprojResolveAssemblyReference.cache
 F:\code\baby_games\trunk\client\baby_discovery\obj\Debug\baby_discovery.dll
 F:\code\baby_games\trunk\client\baby_discovery\obj\Debug\baby_discovery.pdb
+E:\projects\html5\baby_games\trunk\client\baby_discovery\bin\baby_discovery.dll.config
+E:\projects\html5\baby_games\trunk\client\baby_discovery\bin\baby_discovery.dll
+E:\projects\html5\baby_games\trunk\client\baby_discovery\bin\baby_discovery.pdb
+E:\projects\html5\baby_games\trunk\client\baby_discovery\obj\Debug\baby_discovery.dll
+E:\projects\html5\baby_games\trunk\client\baby_discovery\obj\Debug\baby_discovery.pdb
+E:\projects\html5\baby_games\trunk\client\baby_discovery\obj\Debug\baby_discovery.csprojResolveAssemblyReference.cache
