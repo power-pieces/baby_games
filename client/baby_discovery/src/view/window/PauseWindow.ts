@@ -10,7 +10,7 @@
 
     public init()
     {
-
+        DC.isPause = true;
     }
 
     public addListeners(): void
@@ -38,6 +38,7 @@
 
     public dispose(): void
     {
+        DC.isPause = false;
         super.dispose();
     }
 }

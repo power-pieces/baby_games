@@ -1,4 +1,5 @@
 {
   "game_id":1,
-  "server": "http://localhost/baby_games/interface.php"  
+  "server": "http://localhost/baby_games/interface.php",
+  "positions":[[96,116],[249,116],[397,116],[96,338],[249,338],[397,338]]    
 }

@@ -10,7 +10,7 @@
 	<ns1:Top id="topBanner" x="0" y="0" skinName="skins.component.TopSkin"/>
 	<e:Label text="积分：1000" id="txtScore" x="47" y="115"/>
 	<e:Label id="txtLevel" text="关卡：0" x="305" y="115"/>
-	<e:Label id="txtTime" text="倒计时：6秒" y="197" horizontalCenter="0.5"/>
+	<e:Label id="txtTime" y="197" horizontalCenter="0.5" text="计时：6秒"/>
 	<e:Button id="btnReplay" label="重玩" x="105" y="726"/>
 	<e:Button id="btnPause" label="暂停" x="314" y="726"/>
 	<e:SkinnableContainer id="playBoard" height="466" width="451" x="14" y="244"/>

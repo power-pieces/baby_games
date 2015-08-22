@@ -1,7 +1,7 @@
 {
 	"groups":[
 	{
-		"keys":"bgImage,box_jpg,rank_1_png,config_json",
+		"keys":"bgImage,box_jpg,rank_1_png,config_json,level_json",
 		"name":"preload"
 	},
 	{
@@ -343,5 +343,10 @@
 		"name":"config_json",
 		"type":"json",
 		"url":"config/config.json"
+	},
+	{
+		"name":"level_json",
+		"type":"json",
+		"url":"config/level.json"
 	}]
 }

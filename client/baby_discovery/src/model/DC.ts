@@ -5,6 +5,8 @@ class DC
 {
     //配置文件
     public static cfg: any = null;
+    //关卡配置
+    public static levelCfg: any = null;
     //用户id
     public static id: string = "test_0";
     //用户名称
@@ -13,6 +15,8 @@ class DC
     public static pic: string = "";
     //关卡
     public static levels: any[] = [];
+    //游戏是否暂停了
+    public static isPause: boolean = false;
 
 
 
