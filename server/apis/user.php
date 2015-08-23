@@ -73,34 +73,16 @@ class User
     public function game_result(&$params, &$res)
     {
         $id = mysql_escape_string($params->id);
+        $gameId = intval($params->game_id);
+        $level = intval($params->level);
         $score = intval($params->score);
 
-        $user = $this->getUserInfo($id);
-        if(intval($user['power']) <= 0) {
-            $res['error'] = 1;
-            return;
-        }
-
-        $sql = null;
-        if(intval($user['best_score']) < $score) {
-            //新纪录
-            $sql = "UPDATE tbl_user SET total_score=total_score + %d,power=power-1,best_score=%d,best_score_utc=%d,best_score_time=NOW() WHERE id='%s';";
-            $sql = sprintf($sql, $score, $score, time(), $id);
-        } else {
-            $sql = "UPDATE tbl_user SET total_score=total_score + %d,power=power-1 WHERE id='%s'";
-            $sql = sprintf($sql, $score, $id);
-        }
+        $sql = "INSERT INTO tbl_record(id, game_id, level, score) VALUES('$id',$gameId,$level,$score) ON DUPLICATE KEY UPDATE score=$score";
 
         $st = new SqlHelper();
         $st->conn();
-        $result = $st->modify($sql);
+        $st->modify($sql);
         $st->close();
-        if(true == $result) {
-            $data = $this->newLottery($id, $score);
-            $res['data'] = $data;
-        } else {
-            $res['error'] = 2;
-        }
     }
 
     /**
@@ -122,7 +104,7 @@ class User
 //        $data['self'] = $result[0]['position'];
 //        $st->close();
 
-        $sql = "SELECT id,game_id,SUM(score) AS score FROM tbl_record GROUP BY id,game_id ORDER BY score DESC LIMIT 0,20";
+        $sql = "SELECT tbl_record.id, tbl_record.game_id, name, SUM(score) AS score FROM tbl_record LEFT JOIN tbl_user ON tbl_record.id = tbl_user.id GROUP BY id,game_id ORDER BY score DESC LIMIT 0,20";
         $st->conn();
         $result = $st->query($sql);
         $st->close();
