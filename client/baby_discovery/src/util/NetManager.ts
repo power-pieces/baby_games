@@ -11,7 +11,7 @@ class NetManager
     private static _lock: LockWindow;
 
     //隐藏的网络调用，不会触发界面
-    public static implicitCall(action: string, params: any, callBack: Function, thisObject: any): void
+    public static implicitCall(action: string, params: any, callBack: Function = null, thisObject: any = null): void
     {
         this._params = params;
 

@@ -1,9 +1,3 @@
-var __extends = this.__extends || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
-};
 /**
  *
  * @author
@@ -14,8 +8,22 @@ var RankItem = (function (_super) {
     function RankItem() {
         _super.call(this, skins.component.RankItemSkin);
     }
-    RankItem.prototype.setInfo = function (rank, pic, name, score) {
+    var __egretProto__ = RankItem.prototype;
+    __egretProto__.setInfo = function (rank, pic, name, score) {
+        this._rank = rank;
+        this._pic = pic;
+        this._name = name;
+        this._score = score;
+        if (this.created) {
+            this.init();
+        }
+    };
+    __egretProto__.init = function () {
+        //重写该代码来完成初始化
+        this.txtName.text = this._name;
+        this.txtScore.text = "" + this._score;
     };
     return RankItem;
 })(ASkinCom);
+RankItem.prototype.__class__ = "RankItem";
 //# sourceMappingURL=RankItem.js.map

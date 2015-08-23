@@ -98,10 +98,11 @@ var Main = (function (_super) {
      * Create scene interface
      */
     __egretProto__.createScene = function () {
-        //游戏场景层，游戏场景相关内容可以放在这里面。
-        //Game scene layer, the game content related to the scene can be placed inside this layer.
+        DC.cfg = RES.getRes("config_json");
+        DC.levelCfg = RES.getRes("level_json");
         GUIManager.init(this.stage);
         GUIManager.showScene(new Index());
+        new LoginCmd().run(DC.id, DC.name, DC.pic);
     };
     return Main;
 })(egret.DisplayObjectContainer);

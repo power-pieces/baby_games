@@ -543,6 +543,8 @@
     <TypeScriptCompile Include="libs\_references.ts" />
     <TypeScriptCompile Include="src\AssetAdapter.ts" />
     <TypeScriptCompile Include="src\control\ACmd.ts" />
+    <TypeScriptCompile Include="src\control\GameResultCmd.ts" />
+    <TypeScriptCompile Include="src\control\GetRankCmd.ts" />
     <TypeScriptCompile Include="src\control\LoginCmd.ts" />
     <TypeScriptCompile Include="src\jing\core\AudioDevice.ts" />
     <TypeScriptCompile Include="src\jing\net\NetProxy.ts" />

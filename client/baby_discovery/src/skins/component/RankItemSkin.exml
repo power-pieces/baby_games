@@ -8,6 +8,6 @@
 	</e:states>
 	<e:UIAsset id="imgRank" source="box_jpg" x="8" y="13"/>
 	<e:UIAsset id="imgHead" source="rank_1_png" x="136" y="34"/>
-	<e:Label id="txtName" text="张小凡" x="235" y="15" textColor="0x474747"/>
-	<e:Label id="txtScore" text="2210" x="239" y="63" textColor="0x4C4C4C"/>
+	<e:Label id="txtName" text="张小凡" x="235" y="15" textColor="0xFFFFFF" bold="true" fontFamily="微软雅黑"/>
+	<e:Label id="txtScore" text="2210" x="239" y="63" textColor="0xFFFFFF" bold="true" fontFamily="微软雅黑"/>
 </e:Skin>

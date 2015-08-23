@@ -14,10 +14,10 @@ class LevelMap extends ASkinCom
 
     public init()
     {
-        
+
     }
 
-    public update():void
+    public update(): void
     {
         for (var k in DC.levels)
         {
@@ -29,7 +29,7 @@ class LevelMap extends ASkinCom
 
         //解锁的关卡
         var level: Level = <Level>this.levels["level" + DC.levels.length];
-        level.setLevel({level:DC.levels.length + 1, score:0});
+        level.setLevel({ level: DC.levels.length + 1, score: 0 });
     }
 
     public partAdded(partName: string, instance: any): void

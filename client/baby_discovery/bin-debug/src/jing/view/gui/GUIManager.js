@@ -17,7 +17,8 @@ var GUIManager = (function () {
     /**
     * 显示场景(场景是唯一的，不能在舞台上叠加，新的场景会移除旧的场景
     */
-    GUIManager.showScene = function (scene) {
+    GUIManager.showScene = function (scene, data) {
+        if (data === void 0) { data = null; }
         if (GUIManager._scene != null) {
             GUIManager.uiStage.removeElement(GUIManager._scene);
             GUIManager._scene.dispose();
@@ -32,11 +33,13 @@ var GUIManager = (function () {
         }
         GUIManager.uiStage.addElement(scene);
         GUIManager._scene = scene;
+        scene.setData(data);
     };
     /**
     * 显示窗口（窗口会移除叠加在舞台上）
     */
-    GUIManager.showWindow = function (window, modal, center) {
+    GUIManager.showWindow = function (window, data, modal, center) {
+        if (data === void 0) { data = null; }
         if (modal === void 0) { modal = true; }
         if (center === void 0) { center = true; }
         var windows = GUIManager._windows;
@@ -46,6 +49,7 @@ var GUIManager = (function () {
         }
         egret.gui.PopUpManager.addPopUp(window, modal, center);
         GUIManager._windows.push(window);
+        window.setData(data);
         if (window.initialized == false && GUIManager._windowLoading != null) {
             egret.gui.PopUpManager.addPopUp(GUIManager._windowLoading, true, true);
             var onCreationComplete = function () {

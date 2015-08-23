@@ -66,7 +66,7 @@ var skins;
             __egretProto__.txtTime_i = function () {
                 var t = new egret.gui.Label();
                 this.txtTime = t;
-                this.__s(t, ["horizontalCenter", "text", "y"], [0.5, "倒计时：6秒", 197]);
+                this.__s(t, ["horizontalCenter", "text", "y"], [0.5, "计时：6秒", 197]);
                 return t;
             };
             GameSkin._skinParts = ["topBanner", "txtScore", "txtLevel", "txtTime", "btnReplay", "btnPause", "playBoard"];

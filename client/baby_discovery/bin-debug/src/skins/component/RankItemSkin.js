@@ -37,13 +37,13 @@ var skins;
             __egretProto__.txtName_i = function () {
                 var t = new egret.gui.Label();
                 this.txtName = t;
-                this.__s(t, ["text", "textColor", "x", "y"], ["张小凡", 0x474747, 235, 15]);
+                this.__s(t, ["bold", "fontFamily", "text", "textColor", "x", "y"], [true, "微软雅黑", "张小凡", 0xFFFFFF, 235, 15]);
                 return t;
             };
             __egretProto__.txtScore_i = function () {
                 var t = new egret.gui.Label();
                 this.txtScore = t;
-                this.__s(t, ["text", "textColor", "x", "y"], ["2210", 0x4C4C4C, 239, 63]);
+                this.__s(t, ["bold", "fontFamily", "text", "textColor", "x", "y"], [true, "微软雅黑", "2210", 0xFFFFFF, 239, 63]);
                 return t;
             };
             RankItemSkin._skinParts = ["imgRank", "imgHead", "txtName", "txtScore"];

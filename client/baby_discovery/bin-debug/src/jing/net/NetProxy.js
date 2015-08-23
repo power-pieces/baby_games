@@ -7,7 +7,8 @@ var NetProxy = (function () {
         this._request = null;
         this._callBack = null;
     }
-    NetProxy.prototype.request = function (url, callBack, thisObject, params, method, dataFormat) {
+    var __egretProto__ = NetProxy.prototype;
+    __egretProto__.request = function (url, callBack, thisObject, params, method, dataFormat) {
         if (callBack === void 0) { callBack = null; }
         if (thisObject === void 0) { thisObject = null; }
         if (params === void 0) { params = null; }
@@ -28,7 +29,7 @@ var NetProxy = (function () {
         this._loader.addEventListener(egret.Event.COMPLETE, this.onRequestData, this);
         this._loader.load(this._request);
     };
-    NetProxy.prototype.onRequestData = function (e) {
+    __egretProto__.onRequestData = function (e) {
         this._loader.removeEventListener(egret.Event.COMPLETE, this.onRequestData, this);
         if (this._callBack) {
             this._callBack(this._loader.data);
@@ -36,4 +37,5 @@ var NetProxy = (function () {
     };
     return NetProxy;
 })();
+NetProxy.prototype.__class__ = "NetProxy";
 //# sourceMappingURL=NetProxy.js.map

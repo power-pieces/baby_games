@@ -10,14 +10,25 @@ var Rank = (function (_super) {
     }
     var __egretProto__ = Rank.prototype;
     __egretProto__.init = function () {
+        new GetRankCmd().run(DC.id);
         this.topBanner.setContent("探索地球", function () {
             GUIManager.showScene(new Menu());
         }, this);
         this.groupRankItem.removeAllElements();
     };
     __egretProto__.addListeners = function () {
+        NoticeManager.addNoticeAction(GameNotice.GOT_RANK, this.gotRankNotice, this);
     };
     __egretProto__.removeListeners = function () {
+        NoticeManager.removeNoticeAction(GameNotice.GOT_RANK, this.gotRankNotice, this);
+    };
+    __egretProto__.gotRankNotice = function (n) {
+        for (var k in n.data.list) {
+            var rankVO = n.data.list[k];
+            var item = new RankItem();
+            item.setInfo(k, rankVO.pic, rankVO.name, rankVO.score);
+            this.groupRankItem.addElement(item);
+        }
     };
     __egretProto__.dispose = function () {
         this.topBanner.dispose();

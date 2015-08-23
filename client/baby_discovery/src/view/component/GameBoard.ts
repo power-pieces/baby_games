@@ -147,6 +147,12 @@
                 else
                 {
                     //放置到错误的位置
+                    var p: any[] = this._pos[this._selected.name];
+                    this._selected.x = p[0];
+                    this._selected.y = p[1];
+                    this._selected.scaleX = this._selected.scaleY = 1;
+                    this._selected.alpha = 1;
+                    this.addChild(this._selected);
                 }
             }
             else
@@ -166,7 +172,7 @@
     {
         if (this._mark == this._imgs.length / 2)
         {
-            GUIManager.showScene(new Result(), this.time);
+            GUIManager.showScene(new Result(), {time:this.time, level:this._level});
         }
     }
 

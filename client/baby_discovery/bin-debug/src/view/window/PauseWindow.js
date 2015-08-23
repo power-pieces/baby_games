@@ -5,6 +5,7 @@ var PauseWindow = (function (_super) {
     }
     var __egretProto__ = PauseWindow.prototype;
     __egretProto__.init = function () {
+        DC.isPause = true;
     };
     __egretProto__.addListeners = function () {
         this.btnContinue.addEventListener(egret.TouchEvent.TOUCH_BEGIN, this.btnContinue_touchBeginHandler, this);
@@ -22,6 +23,7 @@ var PauseWindow = (function (_super) {
         GUIManager.showScene(new Menu());
     };
     __egretProto__.dispose = function () {
+        DC.isPause = false;
         _super.prototype.dispose.call(this);
     };
     return PauseWindow;
