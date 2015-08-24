@@ -532,6 +532,8 @@
     <Content Include="build_engine.bat" />
     <Content Include="egretProperties.json" />
     <Content Include="libs\module_reference.json" />
+    <Content Include="resource\config\config.json" />
+    <Content Include="resource\config\level.json" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
