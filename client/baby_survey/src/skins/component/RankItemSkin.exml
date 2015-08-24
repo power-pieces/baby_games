@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin width="400" height="120" xmlns:e="http://ns.egret-labs.org/egret" xmlns:w="http://ns.egret-labs.org/wing">
+	<w:HostComponent name="egret.gui.SkinnableComponent"/>
+	<w:Declarations/>
+	<e:states>
+		<e:State name="normal"/>
+		<e:State name="disabled"/>
+	</e:states>
+	<e:UIAsset id="imgRank" source="box_jpg" x="8" y="13"/>
+	<e:UIAsset id="imgHead" source="rank_1_png" x="136" y="34"/>
+	<e:Label id="txtName" text="张小凡" x="235" y="15" textColor="0xFFFFFF" bold="true" fontFamily="微软雅黑"/>
+	<e:Label id="txtScore" text="2210" x="239" y="63" textColor="0xFFFFFF" bold="true" fontFamily="微软雅黑"/>
+</e:Skin>

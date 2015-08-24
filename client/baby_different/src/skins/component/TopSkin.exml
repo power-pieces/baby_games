@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin width="480" height="80" xmlns:e="http://ns.egret-labs.org/egret" xmlns:w="http://ns.egret-labs.org/wing">
+	<w:HostComponent name="egret.gui.SkinnableComponent"/>
+	<w:Declarations/>
+	<e:states>
+		<e:State name="normal"/>
+		<e:State name="disabled"/>
+	</e:states>
+	<e:Button id="btnBack" label="按钮" x="13" y="10"/>
+	<e:Label id="txtTitle" text="探索地球" verticalCenter="0" horizontalCenter="0" bold="true" fontFamily="新宋体" textColor="0xFFC7C7"/>
+</e:Skin>

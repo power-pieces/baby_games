@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin width="480" height="1000" xmlns:e="http://ns.egret-labs.org/egret" xmlns:w="http://ns.egret-labs.org/wing" xmlns:ns1="*">
+	<w:HostComponent name="egret.gui.SkinnableComponent"/>
+	<w:Declarations/>
+	<e:states>
+		<e:State name="normal"/>
+		<e:State name="disabled"/>
+	</e:states>
+	<ns1:Level id="level0" x="17" y="15" skinName="skins.component.LevelSkin"/>
+	<ns1:Level id="level1" skinName="skins.component.LevelSkin" x="255" y="114"/>
+	<ns1:Level id="level2" skinName="skins.component.LevelSkin" x="37" y="312"/>
+	<ns1:Level id="level3" skinName="skins.component.LevelSkin" x="265" y="447"/>
+	<ns1:Level id="level4" skinName="skins.component.LevelSkin" x="36" y="607"/>
+	<ns1:Level id="level5" skinName="skins.component.LevelSkin" x="273" y="730"/>
+</e:Skin>

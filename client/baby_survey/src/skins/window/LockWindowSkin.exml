@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin width="480" height="800" xmlns:e="http://ns.egret-labs.org/egret" xmlns:w="http://ns.egret-labs.org/wing">
+	<w:HostComponent name="egret.gui.SkinnableComponent"/>
+	<w:Declarations/>
+	<e:states>
+		<e:State name="normal"/>
+		<e:State name="disabled"/>
+	</e:states>
+	<e:Rect height="100%" width="100%" x="0" y="0" fillColor="0x000000" fillAlpha="1"/>
+	<e:Label id="txtContent" text="标签" width="100%" verticalCenter="0" horizontalCenter="0" textAlign="center" bold="true"/>
+</e:Skin>

@@ -1,0 +1,6 @@
+E:\projects\html5\baby_games\trunk\client\baby_different\bin\baby_different.dll.config
+E:\projects\html5\baby_games\trunk\client\baby_different\bin\baby_different.dll
+E:\projects\html5\baby_games\trunk\client\baby_different\bin\baby_different.pdb
+E:\projects\html5\baby_games\trunk\client\baby_different\obj\Debug\baby_different.csprojResolveAssemblyReference.cache
+E:\projects\html5\baby_games\trunk\client\baby_different\obj\Debug\baby_different.dll
+E:\projects\html5\baby_games\trunk\client\baby_different\obj\Debug\baby_different.pdb
