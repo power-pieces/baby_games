@@ -30,60 +30,67 @@ class Result extends ASkinCom
 
     public init()
     {
-        var score: number = this.getScore();
-
-        if (DC.levels.length > this.data.level - 1)
+        if (this.data.success)
         {
-            var vo: any = DC.levels[this.data.level - 1];
-            if (score > vo.score)
+            var score: number = this.getScore();
+
+            if (DC.levels.length > this.data.level - 1)
             {
-                vo.score = score;
+                var vo: any = DC.levels[this.data.level - 1];
+                if (score > vo.score)
+                {
+                    vo.score = score;
+                    //发送到服务器
+                    new GameResultCmd().run(DC.id, DC.cfg.game_id, this.data.level, score);
+                }
+            }
+            else
+            {
+                DC.levels[this.data.level - 1] = { level: this.data.level, score: score };
                 //发送到服务器
                 new GameResultCmd().run(DC.id, DC.cfg.game_id, this.data.level, score);
+            }
+
+
+
+            this.txtScore.text = "积分：" + DC.getTotalScore();
+
+            this.topBanner.setContent("探索地球", function (): void
+            {
+                GUIManager.showScene(new Menu());
+            }, this);
+
+            if (10 == score)
+            {
+                this._state = "fail";
+                this.txtGetScore.text = "分数：" + score;
+            }
+
+            this.imgStar0.visible = false;
+            this.imgStar1.visible = false;
+            this.imgStar2.visible = false;
+
+            if (score >= 100)
+            {
+                this.imgStar0.visible = true;
+            }
+            if (score >= 200)
+            {
+                this.imgStar1.visible = true;
+            }
+            if (score >= 300)
+            {
+                this.imgStar2.visible = true;
             }
         }
         else
         {
-            DC.levels[this.data.level - 1] = { level: this.data.level, score: score };
-            //发送到服务器
-            new GameResultCmd().run(DC.id, DC.cfg.game_id, this.data.level, score);
+            this._state = "defeat";
         }
-
-    
-
-        this.txtScore.text = "积分：" + DC.getTotalScore();
-
-        this.topBanner.setContent("探索地球", function (): void
-        {
-            GUIManager.showScene(new Menu());
-        }, this);
-
-        if (10 == score)
-        {
-            this._state = "fail";
-            this.txtGetScore.text = "分数：" + score;
-        }
-
-        this.imgStar0.visible = false;
-        this.imgStar1.visible = false;
-        this.imgStar2.visible = false;
-
-        if (score >= 100)
-        {
-            this.imgStar0.visible = true;
-        }
-        if (score >= 200)
-        {
-            this.imgStar1.visible = true;
-        }
-        if (score >= 300)
-        {
-            this.imgStar2.visible = true;
-        }        
 
         this.txtTime.text = "时间：" + this.data.time + "秒";
 
-
+        this.invalidateSkinState();
     }
 
     private getScore(): number

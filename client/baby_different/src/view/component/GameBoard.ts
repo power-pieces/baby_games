@@ -1,9 +1,15 @@
-﻿class GameBoard extends egret.gui.UIComponent
+class GameBoard extends egret.gui.UIComponent
 {
+    private _txtQ: egret.TextField = new egret.TextField();
+    private _shape: egret.Shape = new egret.Shape();
+    private _startPoint: egret.Point;
+    
+    
     private _level: number;
     private _groups: any = {};
     private _pos: any = {};
     private _imgs: egret.Bitmap[] = [];
+    private _matched: egret.Bitmap[] = [];
     
     private _selected: egret.Bitmap = null;
     private _over: egret.Bitmap = null;
@@ -25,26 +31,37 @@
     private init(): void
     {
         this.addListeners();
-        var positins: any[] = DC.cfg.positions;
-        positins = positins.concat();
-        var data: any[] = DC.levelCfg["level" + this._level];
-        for (var i = 0; i < data.length; i++)
+        this.width = 480;
+        this.height = 500;
+        this._shape.touchEnabled = false;
+        var topPos: any[] = DC.cfg.topPos;
+        topPos = topPos.concat();
+        var bottomPos: any[] = ArrayUtil.random(DC.cfg.bottomPos);
+
+       
+        var data: any = DC.levelCfg["level" + this._level];
+        this.addChild( this._txtQ );
+        this._txtQ.text = data.question;
+        var pics: string[] = data.pics;
+
+        
+
+        for (var i = 0; i < pics.length; i++)
         {
-            var group: any[] = data[i];
-            var img0: egret.Bitmap = ResUtil.createBitmap(group[0]);
-            var img1: egret.Bitmap = ResUtil.createBitmap(group[1]);
+            var img0: egret.Bitmap = ResUtil.createBitmap(pics[i]);
+            var img1: egret.Bitmap = ResUtil.createBitmap(pics[i]);
             img0.name = "group" + i + "_" + 0;
             img1.name = "group" + i + "_" + 1;
             this._groups[img0.name] = i;
             this._groups[img1.name] = i;
-
-            var p: any[] = positins.shift();
+            
+            var p: any[] = topPos.shift();
             //img0.anchorX = img0.anchorY = 0.5;
             img0.x = p[0];
             img0.y = p[1];
             this._pos[img0.name] = p;
             
-            p = positins.shift();
+            p = bottomPos.shift();
             //img1.anchorX = img1.anchorY = 0.5;
             img1.x = p[0];
             img1.y = p[1];
@@ -61,6 +78,8 @@
             this._imgs.push(img0);
             this._imgs.push(img1);
         }
+        
+        this.addChild( this._shape );
     }
 
     public addListeners(): void
@@ -81,110 +100,138 @@
 
     private touchMoveHandler(e: egret.TouchEvent): void
     {
-        if (null != this._selected)
+        if(null != this._startPoint)
         {
-            this._selected.x = e.localX - this._selected.width / 2;
-            this._selected.y = e.localY - this._selected.height / 2;
-
-            if (this._over != null)
+            var sx: number = this._startPoint.x;
+            var sy: number = this._startPoint.y;
+            var ex: number = e.localX;
+            var ey: number = e.localY;
+            var over: egret.Bitmap = this.getOverTarget(e.localX, e.localY);
+            if (over != null)
             {
-                this._over.scaleX = this._over.scaleY = 1;
-                this._over = null;
-            }
-
-            for (var k in this._imgs)
-            {
-                var temp: egret.Bitmap = this._imgs[k];
-                if (temp == this._selected)
-                {
-                    continue;
-                }
-
-                if (this.isHit(this._selected, temp))
-                {
-                    this._over = temp;
-                    temp.scaleX = temp.scaleY = 1.1;
-                    //if (this._groups[this._selected.name] == this._groups[temp.name])
-                    //{
-                    //    this.removeChild(this._selected);
-                    //    this._selected = null;
-                    //    break;
-                    //}
-                    //else
-                    //{
-                    //    break;
-                    //}
-                }                
+                ex = over.x + over.width / 2;
+                ey = over.y + over.height / 2;
             }
             
+            this.drawLine(sx,sy,ex,ey);            
         }
     }
 
-    private isHit(a: egret.Bitmap, b: egret.Bitmap):boolean
+    private getOverTarget(x:number ,y:number):egret.Bitmap
     {
-        var ra: egret.Rectangle = a.getBounds(null, true);
-        ra.x = a.x;
-        ra.y = a.y;
-        var rb: egret.Rectangle = b.getBounds(null, true);
-        rb.x = b.x;
-        rb.y = b.y;
-        return ra.intersects(rb);
+        for (var k in this._imgs)
+        {
+            var temp: egret.Bitmap = this._imgs[k];
+            if (temp == this._selected)
+            {
+                continue;
+            }
+
+            if (this._matched.indexOf(temp) > -1)
+            {
+                continue;
+            }
+
+            if (this.isHitPoint(temp, x,y))
+            {
+                this._over = temp;
+                return temp;
+            }            
+        }
+        this._over = null;
+        return null;
     }
 
+    private isHitPoint(bmd: egret.Bitmap, x: number, y: number): boolean
+    {
+        if (x <= bmd.x + bmd.width && x >= bmd.x && y <= bmd.y + bmd.height && y >= bmd.y)
+        {
+            return true;
+        }
+        return false;
+    }
 
     private touchEndHandler(e: egret.TouchEvent): void
     {
-        if (this._selected)
+        this.getOverTarget(e.localX, e.localY);
+
+        if (this._selected && this._over)
         {
-            if (this._over)
+            if (this._groups[this._selected.name] == this._groups[this._over.name])
             {
-                if (this._groups[this._selected.name] == this._groups[this._over.name])
+                //是不是第一次连线
+                if (this._matched.length == 0)
                 {
-                    this.removeChild(this._selected);  
-                    this._mark++;
-                    this.checkOver();                  
+                    if (this._imgs[0] == this._selected || this._imgs[0] == this._selected)
+                    {
+                        //是正确答案
+                        this._matched.push(this._selected);
+                        this._matched.push(this._over);
+                    }
+                    else
+                    {
+                        //不是正确答案，退出游戏
+                        GUIManager.showScene(new Result(), { time: this.time, level: this._level, success: false });
+                    }
                 }
                 else
                 {
-                    //放置到错误的位置
-                    var p: any[] = this._pos[this._selected.name];
-                    this._selected.x = p[0];
-                    this._selected.y = p[1];
-                    this._selected.scaleX = this._selected.scaleY = 1;
-                    this._selected.alpha = 1;
-                    this.addChild(this._selected);
+                    //配对成功
+                    this._matched.push(this._selected);
+                    this._matched.push(this._over);
+                    if (this._matched.length == 6)
+                    {
+                        GUIManager.showScene(new Result(), { time: this.time, level: this._level, success: true });
+                    }
                 }
             }
-            else
+            else if (this._matched.length == 0)
             {
-                var p: any[] = this._pos[this._selected.name];
-                this._selected.x = p[0];
-                this._selected.y = p[1];
-                this._selected.scaleX = this._selected.scaleY = 1;
-                this._selected.alpha = 1;
-                this.addChild(this._selected);
-            }
+                //第一次配对就错误，不是正确答案，退出游戏
+                GUIManager.showScene(new Result(), { time: this.time, level: this._level, success: false });
+            }           
         }
-        this._selected = null;
-    }
-
-    private checkOver(): void
-    {
-        if (this._mark == this._imgs.length / 2)
-        {
-            GUIManager.showScene(new Result(), {time:this.time, level:this._level});
-        }
+        this._selected = this._over = null;
+        this._startPoint = null;
+        this.updateLines();
     }
 
     private img_touchBeginHandler(e: egret.TouchEvent): void
     {
-        if (null != this._pos[e.currentTarget.name])
+        if (null != this._pos[e.currentTarget.name] && this._matched.indexOf(e.currentTarget) == -1)
         {
             this._selected = e.currentTarget;
-            this._selected.scaleX = this._selected.scaleY = 1.1;
-            this._selected.alpha = 0.5;
-            this.addChild(this._selected);
+            var x: number = this._selected.x + ( this._selected.width >> 1 );
+            var y: number = this._selected.y + ( this._selected.height >> 1 );
+            this._startPoint = new egret.Point(x, y);
         }       
+    }
+
+    private updateLines(): void
+    {
+        var g: egret.Graphics = this._shape.graphics;
+        g.clear();
+
+        g.lineStyle(10, 0x00FF00);
+
+        //先画连好的
+        for (var i: number = 0; i < this._matched.length; i += 2)
+        {
+            g.moveTo(this._matched[i].x + this._matched[i].width / 2, this._matched[i].y + this._matched[i].height / 2);
+            g.lineTo(this._matched[i + 1].x + this._matched[i + 1].width / 2, this._matched[i + 1].y + this._matched[i + 1].height / 2);
+        }
+        g.endFill();
+    }
+    
+    private drawLine(sx:number, sy:number, ex:number, ey:number): void
+    {
+        var g: egret.Graphics = this._shape.graphics;        
+        this.updateLines();
+
+        g.lineStyle( 10, 0xFF0000 );
+        g.moveTo( sx, sy );
+        g.lineTo( ex, ey );
+        g.endFill();
     }
 
     public dispose(): void
