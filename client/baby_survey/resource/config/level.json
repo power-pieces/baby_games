@@ -1,6 +1,47 @@
-{
-  "level1":[["box_jpg","box_jpg"],["box_jpg","box_jpg"],["box_jpg","box_jpg"]],
-  "level2":[["box_jpg","box_jpg"],["box_jpg","box_jpg"],["box_jpg","box_jpg"]],
-  "level3":[["box_jpg","box_jpg"],["box_jpg","box_jpg"],["box_jpg","box_jpg"]],
-  "level4":[["box_jpg","box_jpg"],["box_jpg","box_jpg"],["box_jpg","box_jpg"]]    
+﻿{
+    "level1": {
+		"question":"图中有几颗五角星",
+        "pic": "box_jpg",
+        "answer": [
+            3,
+            4,
+            5
+        ]
+    },
+    "level2": {
+		"question":"图中有几颗五角星",
+        "pic": "box_jpg",
+        "answer": [
+            3,
+            4,
+            5
+        ]
+    },
+    "level3": {
+		"question":"图中有几颗五角星",
+        "pic": "box_jpg",
+        "answer": [
+            3,
+            4,
+            5
+        ]
+    },
+    "level4": {
+		"question":"图中有几颗五角星",
+        "pic": "box_jpg",
+        "answer": [
+            3,
+            4,
+            5
+        ]
+    },
+    "level5": {
+		"question":"图中有几颗五角星",
+        "pic": "box_jpg",
+        "answer": [
+            3,
+            4,
+            5
+        ]
+    }
 }

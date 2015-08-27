@@ -37,3 +37,4 @@ var Rank = (function (_super) {
     return Rank;
 })(ASkinCom);
 Rank.prototype.__class__ = "Rank";
+//# sourceMappingURL=Rank.js.map

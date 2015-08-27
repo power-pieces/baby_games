@@ -22,3 +22,4 @@ var Notice = (function () {
     return Notice;
 })();
 Notice.prototype.__class__ = "Notice";
+//# sourceMappingURL=Notice.js.map

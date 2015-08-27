@@ -41,3 +41,4 @@ var skins;
         PauseMenuSkin.prototype.__class__ = "skins.window.PauseMenuSkin";
     })(window = skins.window || (skins.window = {}));
 })(skins || (skins = {}));
+//# sourceMappingURL=PauseMenuSkin.js.map

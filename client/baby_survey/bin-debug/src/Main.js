@@ -98,6 +98,7 @@ var Main = (function (_super) {
      * Create scene interface
      */
     __egretProto__.createScene = function () {
+        DC.stage = this.stage;
         DC.cfg = RES.getRes("config_json");
         DC.levelCfg = RES.getRes("level_json");
         GUIManager.init(this.stage);
@@ -107,3 +108,4 @@ var Main = (function (_super) {
     return Main;
 })(egret.DisplayObjectContainer);
 Main.prototype.__class__ = "Main";
+//# sourceMappingURL=Main.js.map

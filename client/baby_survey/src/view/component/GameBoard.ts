@@ -1,16 +1,13 @@
 ﻿class GameBoard extends egret.gui.UIComponent
 {
+    private HEIGHT: number = 550;
+
     private _level: number;
-    private _groups: any = {};
-    private _pos: any = {};
-    private _imgs: egret.Bitmap[] = [];
-    
-    private _selected: egret.Bitmap = null;
-    private _over: egret.Bitmap = null;
-
-    private _mark: number = 0;
-
     public time: number = 0;
+
+    private _img: egret.Bitmap;
+    private _answers: Satellite[] = [];
+    private _earth: egret.Bitmap;
 
     public constructor(level:number) 
     {
@@ -18,173 +15,86 @@
         this._level = level;
         this.init();
         this.touchEnabled = true;
-        this.touchChildren = true;
-        
+        this.touchChildren = true;        
     }
 
     private init(): void
     {
-        this.addListeners();
-        var positins: any[] = DC.cfg.positions;
-        positins = positins.concat();
-        var data: any[] = DC.levelCfg["level" + this._level];
-        for (var i = 0; i < data.length; i++)
+        var data: any = DC.levelCfg["level" + this._level];
+
+        this._img = ResUtil.createBitmap(data.pic);
+        this._img.x = (DC.stage.stageWidth - this._img.width) / 2;
+        this._img.y = 0;
+        this.addChild(this._img);
+
+        this._earth = ResUtil.createBitmap("box_jpg");
+        this._earth.anchorX = this._earth.anchorY = 0.5;
+        this._earth.x = DC.stage.stageWidth / 2;
+        this._earth.y = this.HEIGHT;
+        this.addChild(this._earth);
+
+        var baseV: number = (Math.random() * 1) + 0.1;
+        var vector: number = Math.random() * 10;
+        if (vector < 5)
         {
-            var group: any[] = data[i];
-            var img0: egret.Bitmap = ResUtil.createBitmap(group[0]);
-            var img1: egret.Bitmap = ResUtil.createBitmap(group[1]);
-            img0.name = "group" + i + "_" + 0;
-            img1.name = "group" + i + "_" + 1;
-            this._groups[img0.name] = i;
-            this._groups[img1.name] = i;
-
-            var p: any[] = positins.shift();
-            //img0.anchorX = img0.anchorY = 0.5;
-            img0.x = p[0];
-            img0.y = p[1];
-            this._pos[img0.name] = p;
-            
-            p = positins.shift();
-            //img1.anchorX = img1.anchorY = 0.5;
-            img1.x = p[0];
-            img1.y = p[1];
-            this._pos[img1.name] = p;
-
-            this.addChild(img0);
-            this.addChild(img1);
-
-            img0.addEventListener(egret.TouchEvent.TOUCH_BEGIN, this.img_touchBeginHandler, this);
-            img1.addEventListener(egret.TouchEvent.TOUCH_BEGIN, this.img_touchBeginHandler, this);
-            img0.touchEnabled = true;
-            img1.touchEnabled = true;
-
-            this._imgs.push(img0);
-            this._imgs.push(img1);
+            baseV = -baseV;
         }
+        var m: number[] = [1, 1.2, 1.4];
+        var pos: number[] = [100, 200, 300];
+        for (var i: number = 0; i < 3; i++)
+        {
+            var sate: Satellite = new Satellite(baseV * m[i], pos[i], false);            
+            sate.x = this._earth.x;
+            sate.y = this._earth.y;            
+            
+            
+            this.addChild(sate);
+            this._answers.push(sate);
+        }
+
+        this.addListeners();
     }
 
     public addListeners(): void
     {
-        this.addEventListener(egret.TouchEvent.TOUCH_MOVE, this.touchMoveHandler, this);
-        this.addEventListener(egret.TouchEvent.TOUCH_END, this.touchEndHandler, this);
+        for (var k in this._answers)
+        {
+            var sate: Satellite = this._answers[k];
+            sate.addListeners();
+            sate.addEventListener(egret.TouchEvent.TOUCH_BEGIN, this.sate_touchBeginHandler, this);
+        }
     }
 
     public removeListeners(): void
     {
-        for (var k in this._pos)
+        for (var k in this._answers)
         {
-            k.removeEventListener(egret.TouchEvent.TOUCH_BEGIN, this.img_touchBeginHandler, this);
-        }
-        this.removeEventListener(egret.TouchEvent.TOUCH_MOVE, this.touchMoveHandler, this);
-        this.removeEventListener(egret.TouchEvent.TOUCH_END, this.touchEndHandler, this);        
-    }
-
-    private touchMoveHandler(e: egret.TouchEvent): void
-    {
-        if (null != this._selected)
-        {
-            this._selected.x = e.localX - this._selected.width / 2;
-            this._selected.y = e.localY - this._selected.height / 2;
-
-            if (this._over != null)
-            {
-                this._over.scaleX = this._over.scaleY = 1;
-                this._over = null;
-            }
-
-            for (var k in this._imgs)
-            {
-                var temp: egret.Bitmap = this._imgs[k];
-                if (temp == this._selected)
-                {
-                    continue;
-                }
-
-                if (this.isHit(this._selected, temp))
-                {
-                    this._over = temp;
-                    temp.scaleX = temp.scaleY = 1.1;
-                    //if (this._groups[this._selected.name] == this._groups[temp.name])
-                    //{
-                    //    this.removeChild(this._selected);
-                    //    this._selected = null;
-                    //    break;
-                    //}
-                    //else
-                    //{
-                    //    break;
-                    //}
-                }                
-            }
-            
+            var sate: Satellite = this._answers[k];
+            sate.removeListeners();
+            sate.removeEventListener(egret.TouchEvent.TOUCH_BEGIN, this.sate_touchBeginHandler, this);
         }
     }
 
-    private isHit(a: egret.Bitmap, b: egret.Bitmap):boolean
+    private sate_touchBeginHandler(e: egret.TouchEvent): void
     {
-        var ra: egret.Rectangle = a.getBounds(null, true);
-        ra.x = a.x;
-        ra.y = a.y;
-        var rb: egret.Rectangle = b.getBounds(null, true);
-        rb.x = b.x;
-        rb.y = b.y;
-        return ra.intersects(rb);
-    }
-
-
-    private touchEndHandler(e: egret.TouchEvent): void
-    {
-        if (this._selected)
+        this.removeListeners();
+        var sate: Satellite = e.currentTarget;
+        DC.stage.touchEnabled = false;
+        egret.setTimeout(function (sate:Satellite): void
         {
-            if (this._over)
+            DC.stage.touchEnabled = true;
+           
+            if (sate.data)
             {
-                if (this._groups[this._selected.name] == this._groups[this._over.name])
-                {
-                    this.removeChild(this._selected);  
-                    this._mark++;
-                    this.checkOver();                  
-                }
-                else
-                {
-                    //放置到错误的位置
-                    var p: any[] = this._pos[this._selected.name];
-                    this._selected.x = p[0];
-                    this._selected.y = p[1];
-                    this._selected.scaleX = this._selected.scaleY = 1;
-                    this._selected.alpha = 1;
-                    this.addChild(this._selected);
-                }
+                GUIManager.showScene(new Result(), { time: this.time, level: this._level, success: true });
             }
             else
             {
-                var p: any[] = this._pos[this._selected.name];
-                this._selected.x = p[0];
-                this._selected.y = p[1];
-                this._selected.scaleX = this._selected.scaleY = 1;
-                this._selected.alpha = 1;
-                this.addChild(this._selected);
+                GUIManager.showScene(new Result(), { time: this.time, level: this._level, success: false });
             }
-        }
-        this._selected = null;
-    }
+        }, this, 1000, sate);
 
-    private checkOver(): void
-    {
-        if (this._mark == this._imgs.length / 2)
-        {
-            GUIManager.showScene(new Result(), {time:this.time, level:this._level});
-        }
-    }
 
-    private img_touchBeginHandler(e: egret.TouchEvent): void
-    {
-        if (null != this._pos[e.currentTarget.name])
-        {
-            this._selected = e.currentTarget;
-            this._selected.scaleX = this._selected.scaleY = 1.1;
-            this._selected.alpha = 0.5;
-            this.addChild(this._selected);
-        }       
     }
 
     public dispose(): void

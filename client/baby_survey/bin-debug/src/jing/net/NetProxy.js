@@ -38,3 +38,4 @@ var NetProxy = (function () {
     return NetProxy;
 })();
 NetProxy.prototype.__class__ = "NetProxy";
+//# sourceMappingURL=NetProxy.js.map

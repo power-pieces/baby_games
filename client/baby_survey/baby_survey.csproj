@@ -420,6 +420,8 @@
     <Content Include="libs\core\extension\resource\Resource.js" />
     <Content Include="libs\core\jslib\NumberUtils.js" />
     <Content Include="resource\assets\bg.jpg" />
+    <Content Include="resource\assets\box.jpg" />
+    <Content Include="resource\assets\rank_1.png" />
     <Content Include="resource\assets\simple\CheckBox\checkbox-select_disabled.png" />
     <Content Include="resource\assets\simple\CheckBox\checkbox-select_normal.png" />
     <Content Include="resource\assets\simple\CheckBox\checkbox-select_over.png" />
@@ -480,21 +482,11 @@
     <Content Include="resource\assets\simple\VSlider\VSlider_fill.png" />
     <Content Include="resource\assets\simple\VSlider\VSlider_thumb.png" />
     <Content Include="resource\assets\simple\VSlider\VSlider_track.png" />
-    <Content Include="web.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="bin-debug\src\manifest.json" />
-    <Content Include="build.bat" />
-    <Content Include="libs\core\core.d.json" />
-    <Content Include="libs\core\egret\context\html5.d.json" />
-    <Content Include="libs\core\egret\context\native.d.json" />
-    <Content Include="libs\core\extension\gui\gui.d.json" />
-    <Content Include="libs\core\extension\oldVersion\version_old.d.json" />
-    <Content Include="libs\core\extension\resource\res.d.json" />
-    <Content Include="libs\module_reference.json" />
-    <Content Include="resource\resource.json" />
-    <Content Include="resource\theme.thm" />
-    <Content Include="run.bat" />
+    <Content Include="src\jing\utils\AudioDevice.js" />
+    <Content Include="src\jing\utils\Extend.js" />
+    <Content Include="src\jing\utils\HGroup.js" />
+    <Content Include="src\jing\utils\StringUtil.js" />
+    <Content Include="src\jing\utils\Texture.js" />
     <Content Include="src\skins\scene\ShowcaseSkin.exml" />
     <Content Include="src\skins\simple\AlertSkin.exml" />
     <Content Include="src\skins\simple\ButtonSkin.exml" />
@@ -511,13 +503,7 @@
     <Content Include="src\skins\simple\ListSkin.exml" />
     <Content Include="src\skins\simple\PanelSkin.exml" />
     <Content Include="src\skins\simple\ProgressBarSkin.exml" />
-    <Content Include="src\skins\simple\VScrollBarSkin.exml" />
-    <Content Include="src\skins\simple\VScrollBarThumbSkin.exml" />
-    <Content Include="src\skins\simple\VSliderSkin.exml" />
-    <Content Include="src\skins\simple\VSliderThumbSkin.exml" />
-    <Content Include="build_engine.bat" />
     <Content Include="src\skins\simple\RadioButtonSkin.exml" />
-    <Content Include="egretProperties.json" />
     <Content Include="src\skins\simple\ScrollerSkin.exml" />
     <Content Include="src\skins\simple\SkinnableContainerSkin.exml" />
     <Content Include="src\skins\simple\SkinnableDataContainer.exml" />
@@ -532,6 +518,40 @@
     <Content Include="src\skins\simple\TreeDisclosureButtonSkin.exml" />
     <Content Include="src\skins\simple\TreeItemRendererSkin.exml" />
     <Content Include="src\skins\simple\TreeSkin.exml" />
+    <Content Include="src\skins\simple\VScrollBarSkin.exml" />
+    <Content Include="src\skins\simple\VScrollBarThumbSkin.exml" />
+    <Content Include="src\skins\simple\VSliderSkin.exml" />
+    <Content Include="src\skins\simple\VSliderThumbSkin.exml" />
+    <Content Include="web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin-debug\src\manifest.json" />
+    <Content Include="build.bat" />
+    <Content Include="libs\core\core.d.json" />
+    <Content Include="libs\core\egret\context\html5.d.json" />
+    <Content Include="libs\core\egret\context\native.d.json" />
+    <Content Include="libs\core\extension\gui\gui.d.json" />
+    <Content Include="libs\core\extension\oldVersion\version_old.d.json" />
+    <Content Include="libs\core\extension\resource\res.d.json" />
+    <Content Include="libs\module_reference.json" />
+    <Content Include="resource\resource.json" />
+    <Content Include="resource\theme.thm" />
+    <Content Include="run.bat" />
+    <Content Include="build_engine.bat" />
+    <Content Include="egretProperties.json" />
+    <Content Include="resource\config\config.json" />
+    <Content Include="resource\config\level.json" />
+    <Content Include="src\skins\component\LevelMapSkin.exml" />
+    <Content Include="src\skins\component\LevelSkin.exml" />
+    <Content Include="src\skins\component\RankItemSkin.exml" />
+    <Content Include="src\skins\component\TopSkin.exml" />
+    <Content Include="src\skins\scene\GameSkin.exml" />
+    <Content Include="src\skins\scene\IndexSkin.exml" />
+    <Content Include="src\skins\scene\MenuSkin.exml" />
+    <Content Include="src\skins\scene\RankSkin.exml" />
+    <Content Include="src\skins\scene\ResultSkin.exml" />
+    <Content Include="src\skins\window\LockWindowSkin.exml" />
+    <Content Include="src\skins\window\PauseMenuSkin.exml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -567,7 +587,6 @@
     <TypeScriptCompile Include="src\LoadingUI.ts" />
     <TypeScriptCompile Include="src\Main.ts" />
     <TypeScriptCompile Include="src\model\DC.ts" />
-    <TypeScriptCompile Include="src\scene\Showcase.ts" />
     <TypeScriptCompile Include="src\util\Effect.ts" />
     <TypeScriptCompile Include="src\util\GameNotice.ts" />
     <TypeScriptCompile Include="src\util\NetManager.ts" />
@@ -575,6 +594,7 @@
     <TypeScriptCompile Include="src\view\component\Level.ts" />
     <TypeScriptCompile Include="src\view\component\LevelMap.ts" />
     <TypeScriptCompile Include="src\view\component\RankItem.ts" />
+    <TypeScriptCompile Include="src\view\component\Satellite.ts" />
     <TypeScriptCompile Include="src\view\component\Top.ts" />
     <TypeScriptCompile Include="src\view\scene\Game.ts" />
     <TypeScriptCompile Include="src\view\scene\Index.ts" />

@@ -53,4 +53,3 @@ var Game = (function (_super) {
     return Game;
 })(ASkinCom);
 Game.prototype.__class__ = "Game";
-//# sourceMappingURL=Game.js.map

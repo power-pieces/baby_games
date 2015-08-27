@@ -112,3 +112,4 @@ var skins;
         RankSkin.prototype.__class__ = "skins.scene.RankSkin";
     })(scene = skins.scene || (skins.scene = {}));
 })(skins || (skins = {}));
+//# sourceMappingURL=RankSkin.js.map

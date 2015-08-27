@@ -94,4 +94,3 @@ var Result = (function (_super) {
     return Result;
 })(ASkinCom);
 Result.prototype.__class__ = "Result";
-//# sourceMappingURL=Result.js.map

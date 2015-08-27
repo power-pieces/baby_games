@@ -69,3 +69,4 @@ var skins;
         MenuSkin.prototype.__class__ = "skins.scene.MenuSkin";
     })(scene = skins.scene || (skins.scene = {}));
 })(skins || (skins = {}));
+//# sourceMappingURL=MenuSkin.js.map

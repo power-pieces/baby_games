@@ -3,6 +3,8 @@
 */
 class DC
 {
+    //舞台
+    public static stage: egret.Stage = null;
     //配置文件
     public static cfg: any = null;
     //关卡配置

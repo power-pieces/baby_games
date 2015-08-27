@@ -4,3 +4,9 @@ E:\projects\html5\baby_games\trunk\client\baby_survey\bin\baby_survey.dll
 E:\projects\html5\baby_games\trunk\client\baby_survey\bin\baby_survey.pdb
 E:\projects\html5\baby_games\trunk\client\baby_survey\obj\Debug\baby_survey.dll
 E:\projects\html5\baby_games\trunk\client\baby_survey\obj\Debug\baby_survey.pdb
+F:\code\baby_games\trunk\client\baby_survey\bin\baby_survey.dll.config
+F:\code\baby_games\trunk\client\baby_survey\bin\baby_survey.dll
+F:\code\baby_games\trunk\client\baby_survey\bin\baby_survey.pdb
+F:\code\baby_games\trunk\client\baby_survey\obj\Debug\baby_survey.csprojResolveAssemblyReference.cache
+F:\code\baby_games\trunk\client\baby_survey\obj\Debug\baby_survey.dll
+F:\code\baby_games\trunk\client\baby_survey\obj\Debug\baby_survey.pdb

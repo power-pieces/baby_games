@@ -13,6 +13,8 @@ var DC = (function () {
         }
         return score;
     };
+    //舞台
+    DC.stage = null;
     //配置文件
     DC.cfg = null;
     //关卡配置
@@ -30,3 +32,4 @@ var DC = (function () {
     return DC;
 })();
 DC.prototype.__class__ = "DC";
+//# sourceMappingURL=DC.js.map

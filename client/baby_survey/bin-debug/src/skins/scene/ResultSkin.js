@@ -8,7 +8,7 @@ var skins;
                 _super.call(this);
                 this.__s = egret.gui.setProperties;
                 this.__s(this, ["height", "width"], [800, 480]);
-                this.elementsContent = [this.__3_i(), this.topBanner_i(), this.txtScore_i(), this.btnRank_i(), this.imgFace_i(), this.txtTime_i(), this.btnMenu_i(), this.btnReplay_i(), this.btnNext_i()];
+                this.elementsContent = [this.__4_i(), this.topBanner_i(), this.txtScore_i(), this.btnRank_i(), this.imgFace_i(), this.txtTime_i(), this.btnMenu_i(), this.btnReplay_i(), this.btnNext_i()];
                 this.txtGetScore_i();
                 this.imgStar0_i();
                 this.imgStar1_i();
@@ -17,10 +17,25 @@ var skins;
                     new egret.gui.State("win", [
                         new egret.gui.AddItems("imgStar0", "", "last", ""),
                         new egret.gui.AddItems("imgStar1", "", "last", ""),
-                        new egret.gui.AddItems("imgStar2", "", "last", "")
+                        new egret.gui.AddItems("imgStar2", "", "last", ""),
+                        new egret.gui.SetProperty("txtTime", "horizontalCenter", 0),
+                        new egret.gui.SetProperty("btnReplay", "x", 172)
                     ]),
                     new egret.gui.State("fail", [
-                        new egret.gui.AddItems("txtGetScore", "", "last", "")
+                        new egret.gui.AddItems("txtGetScore", "", "last", ""),
+                        new egret.gui.SetProperty("txtTime", "horizontalCenter", 0),
+                        new egret.gui.SetProperty("btnReplay", "x", 172)
+                    ]),
+                    new egret.gui.State("defeat", [
+                        new egret.gui.SetProperty("__4", "height", 800),
+                        new egret.gui.SetProperty("txtTime", "y", 348),
+                        new egret.gui.SetProperty("txtTime", "horizontalCenter", 0),
+                        new egret.gui.SetProperty("btnMenu", "x", 75),
+                        new egret.gui.SetProperty("btnMenu", "y", 565),
+                        new egret.gui.SetProperty("btnReplay", "y", 428),
+                        new egret.gui.SetProperty("btnReplay", "horizontalCenter", 0),
+                        new egret.gui.SetProperty("btnNext", "x", 282),
+                        new egret.gui.SetProperty("btnNext", "y", 563)
                     ])
                 ];
             }
@@ -53,7 +68,7 @@ var skins;
             __egretProto__.btnReplay_i = function () {
                 var t = new egret.gui.Button();
                 this.btnReplay = t;
-                this.__s(t, ["label", "x", "y"], ["重新探索", 172, 569.5]);
+                this.__s(t, ["label", "y"], ["重新探索", 569.5]);
                 return t;
             };
             __egretProto__.imgFace_i = function () {
@@ -80,8 +95,9 @@ var skins;
                 this.__s(t, ["source", "x", "y"], ["rank_1_png", 309, 344]);
                 return t;
             };
-            __egretProto__.__3_i = function () {
+            __egretProto__.__4_i = function () {
                 var t = new egret.gui.UIAsset();
+                this.__4 = t;
                 this.__s(t, ["source", "x", "y"], ["bgImage", 0, 0]);
                 return t;
             };
@@ -106,7 +122,7 @@ var skins;
             __egretProto__.txtTime_i = function () {
                 var t = new egret.gui.Label();
                 this.txtTime = t;
-                this.__s(t, ["horizontalCenter", "text", "y"], [0, "时间：1111秒", 439]);
+                this.__s(t, ["text", "y"], ["时间：1111秒", 439]);
                 return t;
             };
             ResultSkin._skinParts = ["topBanner", "txtScore", "btnRank", "imgFace", "txtTime", "btnMenu", "btnReplay", "btnNext", "txtGetScore", "imgStar0", "imgStar1", "imgStar2"];
@@ -116,3 +132,4 @@ var skins;
         ResultSkin.prototype.__class__ = "skins.scene.ResultSkin";
     })(scene = skins.scene || (skins.scene = {}));
 })(skins || (skins = {}));
+//# sourceMappingURL=ResultSkin.js.map

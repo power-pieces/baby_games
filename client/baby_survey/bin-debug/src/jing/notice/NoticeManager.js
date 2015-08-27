@@ -61,3 +61,4 @@ var NoticeManager = (function () {
     return NoticeManager;
 })();
 NoticeManager.prototype.__class__ = "NoticeManager";
+//# sourceMappingURL=NoticeManager.js.map

@@ -26,3 +26,4 @@ var Index = (function (_super) {
     return Index;
 })(ASkinCom);
 Index.prototype.__class__ = "Index";
+//# sourceMappingURL=Index.js.map

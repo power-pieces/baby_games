@@ -65,4 +65,3 @@ var skins;
         LevelMapSkin.prototype.__class__ = "skins.component.LevelMapSkin";
     })(component = skins.component || (skins.component = {}));
 })(skins || (skins = {}));
-//# sourceMappingURL=LevelMapSkin.js.map

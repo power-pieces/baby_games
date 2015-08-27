@@ -45,8 +45,6 @@
 	"skins/simple/VSliderThumbSkin.exml",
 	"view/component/Level.ts",
 	"Main.ts",
-	"control/GameResultCmd.ts",
-	"control/GetRankCmd.ts",
 	"skins/component/LevelMapSkin.exml",
 	"skins/scene/RankSkin.exml",
 	"skins/scene/ResultSkin.exml",

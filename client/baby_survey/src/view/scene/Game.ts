@@ -6,6 +6,7 @@
 class Game extends ASkinCom
 {
     public topBanner: Top;
+    public txtQuestion: egret.gui.Label;
     public txtScore: egret.gui.Label;
     public txtLevel: egret.gui.Label;
     public txtTime: egret.gui.Label;
@@ -35,8 +36,13 @@ class Game extends ASkinCom
 
         this.txtLevel.text = "关卡：" + this._level;
         this.txtScore.text = "积分：" + DC.getTotalScore();
-        this.gameBoard = new GameBoard(this._level);
+
+        var data: any = DC.levelCfg["level" + this._level];
+        this.txtQuestion.text = data.question;
+
+        this.gameBoard = new GameBoard(this._level);        
         this.playBoard.addElement(this.gameBoard);
+
         this._time = 0;
     }
 

@@ -47,4 +47,3 @@ var ResUtil = (function () {
     return ResUtil;
 })();
 ResUtil.prototype.__class__ = "ResUtil";
-//# sourceMappingURL=ResUtil.js.map

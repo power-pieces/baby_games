@@ -18,6 +18,8 @@ var Game = (function (_super) {
         }, this);
         this.txtLevel.text = "关卡：" + this._level;
         this.txtScore.text = "积分：" + DC.getTotalScore();
+        var data = DC.levelCfg["level" + this._level];
+        this.txtQuestion.text = data.question;
         this.gameBoard = new GameBoard(this._level);
         this.playBoard.addElement(this.gameBoard);
         this._time = 0;
@@ -53,3 +55,4 @@ var Game = (function (_super) {
     return Game;
 })(ASkinCom);
 Game.prototype.__class__ = "Game";
+//# sourceMappingURL=Game.js.map

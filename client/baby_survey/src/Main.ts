@@ -115,6 +115,7 @@ class Main extends egret.DisplayObjectContainer {
      */
     private createScene(): void 
     {        
+        DC.stage = this.stage;
         DC.cfg = RES.getRes("config_json");
         DC.levelCfg = RES.getRes("level_json");
         GUIManager.init(this.stage);

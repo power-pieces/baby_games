@@ -26,3 +26,4 @@ var LockWindow = (function (_super) {
     return LockWindow;
 })(ASkinCom);
 LockWindow.prototype.__class__ = "LockWindow";
+//# sourceMappingURL=LockWindow.js.map

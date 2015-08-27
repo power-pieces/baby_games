@@ -45,8 +45,6 @@ var game_file_list = [
 	"skins/simple/VSliderThumbSkin.js",
 	"view/component/Level.js",
 	"Main.js",
-	"control/GameResultCmd.js",
-	"control/GetRankCmd.js",
 	"skins/component/LevelMapSkin.js",
 	"skins/scene/RankSkin.js",
 	"skins/scene/ResultSkin.js",
