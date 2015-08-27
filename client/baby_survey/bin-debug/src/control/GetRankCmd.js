@@ -15,4 +15,3 @@ var GetRankCmd = (function (_super) {
     return GetRankCmd;
 })(ACmd);
 GetRankCmd.prototype.__class__ = "GetRankCmd";
-//# sourceMappingURL=GetRankCmd.js.map

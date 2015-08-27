@@ -40,4 +40,3 @@ var skins;
         LockWindowSkin.prototype.__class__ = "skins.window.LockWindowSkin";
     })(window = skins.window || (skins.window = {}));
 })(skins || (skins = {}));
-//# sourceMappingURL=LockWindowSkin.js.map

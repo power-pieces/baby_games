@@ -29,4 +29,3 @@ var LevelMap = (function (_super) {
     return LevelMap;
 })(ASkinCom);
 LevelMap.prototype.__class__ = "LevelMap";
-//# sourceMappingURL=LevelMap.js.map

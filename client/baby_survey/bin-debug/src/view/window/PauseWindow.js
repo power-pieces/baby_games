@@ -29,4 +29,3 @@ var PauseWindow = (function (_super) {
     return PauseWindow;
 })(ASkinCom);
 PauseWindow.prototype.__class__ = "PauseWindow";
-//# sourceMappingURL=PauseWindow.js.map

@@ -26,4 +26,3 @@ var RankItem = (function (_super) {
     return RankItem;
 })(ASkinCom);
 RankItem.prototype.__class__ = "RankItem";
-//# sourceMappingURL=RankItem.js.map

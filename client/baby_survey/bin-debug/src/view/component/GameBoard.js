@@ -136,4 +136,3 @@ var GameBoard = (function (_super) {
     return GameBoard;
 })(egret.gui.UIComponent);
 GameBoard.prototype.__class__ = "GameBoard";
-//# sourceMappingURL=GameBoard.js.map

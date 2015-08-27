@@ -12,4 +12,3 @@ var GameNotice = (function (_super) {
     return GameNotice;
 })(Notice);
 GameNotice.prototype.__class__ = "GameNotice";
-//# sourceMappingURL=GameNotice.js.map

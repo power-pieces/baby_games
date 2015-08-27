@@ -53,4 +53,3 @@ var skins;
         RankItemSkin.prototype.__class__ = "skins.component.RankItemSkin";
     })(component = skins.component || (skins.component = {}));
 })(skins || (skins = {}));
-//# sourceMappingURL=RankItemSkin.js.map

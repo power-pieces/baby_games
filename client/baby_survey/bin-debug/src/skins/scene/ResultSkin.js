@@ -116,4 +116,3 @@ var skins;
         ResultSkin.prototype.__class__ = "skins.scene.ResultSkin";
     })(scene = skins.scene || (skins.scene = {}));
 })(skins || (skins = {}));
-//# sourceMappingURL=ResultSkin.js.map

@@ -15,4 +15,3 @@ var GameResultCmd = (function (_super) {
     return GameResultCmd;
 })(ACmd);
 GameResultCmd.prototype.__class__ = "GameResultCmd";
-//# sourceMappingURL=GameResultCmd.js.map

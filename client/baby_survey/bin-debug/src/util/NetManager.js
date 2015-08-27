@@ -65,4 +65,3 @@ var NetManager = (function () {
     return NetManager;
 })();
 NetManager.prototype.__class__ = "NetManager";
-//# sourceMappingURL=NetManager.js.map

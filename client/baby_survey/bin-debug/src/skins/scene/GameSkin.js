@@ -76,4 +76,3 @@ var skins;
         GameSkin.prototype.__class__ = "skins.scene.GameSkin";
     })(scene = skins.scene || (skins.scene = {}));
 })(skins || (skins = {}));
-//# sourceMappingURL=GameSkin.js.map
